@@ -13,7 +13,7 @@
 import {
   getRandomNum,
   getRandomAngle,
-  getAnimationByType,
+  getAnimationByType
 } from "../utils/common";
 const colorlist = [
   "#FFADAD",
@@ -34,28 +34,21 @@ const colorlist = [
   "#9BF6FF",
   "#BDB2FF",
   "#FFC6FF",
-  "#FFFFFC",
+  "#FFFFFC"
 ];
 const userlist = [
-  "刘俊",
-  "刘朝",
-  "马颖涛",
-  "陈超琪",
   "胡明旭",
   "刘周玮",
-  "杨威",
-  "肖健",
   "贾宝林",
-  "代德扬",
-  "何惠婷",
-  "魏聪",
-  "田银伟",
-  "王振洲",
   "李恒",
-  "陈倩",
-  "史小雷",
   "陈晓璇",
-  "张艳萍",
+  "冯孔丽",
+  "李泽航",
+  "吴伟豪",
+  "罗永泽",
+  "张翀",
+  "吴振宇",
+  "代德扬"
 ];
 export default {
   data() {
@@ -63,24 +56,20 @@ export default {
       bgCtx: null, // 背景绘制上下文
       ptCtx: null, // 指针绘制上下文
       list: [
-        "刘朝",
-        "马颖涛",
-        "陈超琪",
         "胡明旭",
         "刘周玮",
-        "杨威",
-        "肖健",
         "贾宝林",
-        "代德扬",
-        "何慧婷",
-        "魏聪",
-        "田银伟",
-        "王振洲",
         "李恒",
-        "黄震",
-        "陈倩",
+        "陈晓璇",
+        "冯孔丽",
+        "李泽航",
+        "吴伟豪",
+        "罗永泽",
+        "张翀",
+        "吴振宇",
+        "代德扬"
       ],
-      timeout: null,
+      timeout: null
     };
   },
   inject: ["Emittier"],
@@ -169,7 +158,7 @@ export default {
           end: getRandomNum(5000, 20000),
           duration: (4000, 20000),
           type: "ease-in-out",
-          callback: callback,
+          callback: callback
         },
         that = this;
       function callback(value) {
@@ -193,7 +182,7 @@ export default {
           type: "ease-in-out",
           end: getRandomNum(5000, 20000),
           duration: getRandomNum(4000, 20000),
-          callback: callback,
+          callback: callback
         },
         that = this;
       function callback(value) {
@@ -323,7 +312,7 @@ export default {
       return { x: x, y: y };
     },
     play(options) {
-      return new Promise((resolve) => {
+      return new Promise(resolve => {
         let { time, begin, end, duration, type, callback } = options;
         let durNums = Math.ceil(duration / 16.7);
         if (!window.requestAnimationFrame) {
@@ -343,8 +332,8 @@ export default {
         }
         step();
       });
-    },
-  },
+    }
+  }
 };
 </script>
 
